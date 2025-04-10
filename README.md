@@ -1,46 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Civa - Plataforma de Buses
 
-## Available Scripts
+**Civa** es una plataforma que permite gestionar la flota de buses, ofreciendo información detallada sobre cada uno de ellos, incluyendo características, estado y marca.
 
-In the project directory, you can run:
+## Tecnologías utilizadas
 
-### `npm start`
+- **Frontend**: React 18, TypeScript, Bootstrap
+- **Backend**: Java 17, Spring Boot, MySQL
+- **Otras**: Swagger para la documentación de la API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalación
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1. Clonar el repositorio
 
-### `npm test`
+```bash
+git clone https://github.com/DiegoHLZ/civa-frontend.git
+cd civa-frontend
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Instalar dependencias
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Ejecutar el proyecto en modo de desarrollo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Accede a la aplicación en [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## Características
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Visualización de buses con paginación.
+- Modal para detalles de cada bus.
+- Diseño responsive con Bootstrap.
+- Autenticación básica implementada para las interacciones con la API.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Endpoints
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+La API de **Civa** está documentada usando **Swagger**. Puedes acceder a ella desde [http://localhost:8080/swagger-ui](http://localhost:8080/swagger-ui) para explorar y probar los diferentes endpoints.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Ejemplo de POST para crear un nuevo bus:
 
-## Learn More
+```json
+{
+  "numeroBus": "BUS-999",
+  "placa": "ZWX-123",
+  "caracteristicas": "Asientos reclinables, TV, aire acondicionado, USB",
+  "activo": false,
+  "marca": { "id": 6 }
+}
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Paginación
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Los buses se obtienen paginados, puedes cambiar el limite en 3, 5 o 10 buses por página. Puedes navegar entre las páginas de resultados.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas colaborar, por favor sigue estos pasos:
+
+1. Haz un fork de este repositorio.
+2. Crea tu rama con los cambios (`git checkout -b feature/nueva-funcionalidad`).
+3. Haz commit de tus cambios (`git commit -am 'Añadir nueva funcionalidad'`).
+4. Haz push a tu rama (`git push origin feature/nueva-funcionalidad`).
+5. Abre un Pull Request.
+
+## 👤 Autor
+
+- **DiegoHLZ**  
+  Desarrollador de software  
+  GitHub: [@DiegoHLZ](https://github.com/DiegoHLZ)
